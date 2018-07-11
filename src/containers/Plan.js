@@ -4,10 +4,13 @@ import {
     View
 } from 'react-native';
 export default class Plan extends Component {
+    static navigationOptions = {
+        title: 'Plan',
+    };
     render() {
         return (
         <View>
-            <Text>detail</Text>
+            <Text>Plan</Text>
             
         </View>)
     }

@@ -5,19 +5,39 @@ import {
     Button,
 } from 'react-native';
 import { connect } from "react-redux";
+
 @connect(({ app }) => ({
     app
 }))
 export default class Home extends Component {
-    jump=()=>{
-        console.log(1111)
-        this.props.navigation.navigate('Plan')
+    static navigationOptions = {
+        title: 'Home',
     }
+    
+    componentDidMount(){
+        // fetch('login/').then((res)=>{
+        //    return res.json()
+        // }).then(data=>{
+        //     console.warn(data)
+        // }).catch(e=>{
+        //     console.warn(e)
+        // })
+    }
+
+    componentWillUnmount(){
+        console.warn('home unmount')
+    }
+    
+    // jump=()=>{  
+      
+    //     this.props.navigation.navigate('Plan')
+    // }
+    
     render() {
         return (
             <View>
                 <Text>{this.props.app.home}</Text>
-                <Button onPress={()=>{this.jump()}} title='go to plan'></Button>
+                {/* <Button onPress={()=>{this.jump()}} title='go to plan'></Button> */}
             </View>
         )
     }

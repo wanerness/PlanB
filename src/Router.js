@@ -9,15 +9,18 @@ import FolkScreen from "./containers/Folk";
 import LoginScreen from "./containers/Login";
 import AuthLoadingScreen from "./containers/Auth-Loading";
 
-const HomeTab = createBottomTabNavigator({
-    Home: HomeScreen, 
-    Plan: PlanScreen,
-    Folk: FolkScreen,
+import HomeStack from "./navigators/home-nav";
+import PlanStack from "./navigators/plan-nav";
+import FolksStack from "./navigators/folks-nav";
+
+//主页tab
+const AppTab = createBottomTabNavigator({
+    Home: HomeStack, 
+    Plan: PlanStack,
+    Folk: FolksStack,
 })
 
-const AppStack = createStackNavigator({
-    Home: HomeTab,
-})
+//登录相关stack
 const AuthStack = createStackNavigator({
     Login: LoginScreen,
 })
@@ -25,7 +28,7 @@ const AuthStack = createStackNavigator({
 const SwitchNav = createSwitchNavigator(
     {
         AuthLoading: AuthLoadingScreen,
-        App: AppStack,
+        App: AppTab,
         Auth: AuthStack,
     },
     {
