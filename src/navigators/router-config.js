@@ -1,4 +1,4 @@
-import HomeScreen from "../containers/Home";
+import HomeScreen from "../containers/Account/Home";
 import PlanScreen from "../containers/Plan";
 import FolkScreen from "../containers/Folk";
 import LoginScreen from "../containers/Login";

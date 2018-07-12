@@ -1,11 +1,6 @@
 import React,{ Component } from "react";
 import { createSwitchNavigator,createBottomTabNavigator,createStackNavigator } from "react-navigation";
 
-// export {default} from "./routes";
-
-import HomeScreen from "./containers/Home";
-import PlanScreen from "./containers/Plan";
-import FolkScreen from "./containers/Folk";
 import LoginScreen from "./containers/Login";
 import AuthLoadingScreen from "./containers/Auth-Loading";
 
@@ -18,6 +13,19 @@ const AppTab = createBottomTabNavigator({
     Home: HomeStack, 
     Plan: PlanStack,
     Folk: FolksStack,
+},{
+        tabBarOptions:{
+            activeTintColor:'#ffc166',
+            activeBackgroundColor:'red',
+            showIcon:true,
+            labelStyle:{
+                fontSize:14
+            },
+            // tabStyle:{
+            //     height:60,
+            // }
+           
+        }
 })
 
 //登录相关stack
