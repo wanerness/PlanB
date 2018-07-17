@@ -6,7 +6,7 @@ const FolksStack = createStackNavigator(
         initialRouteName: 'Folks',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: 'black',
+                backgroundColor: '#C20C0C',
                 height: 40,
             },
             headerTintColor: '#fff',

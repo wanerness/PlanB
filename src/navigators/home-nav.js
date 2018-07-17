@@ -1,19 +1,29 @@
 import React, { Component } from "react";
-import { createSwitchNavigator, createBottomTabNavigator, createStackNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 import { HomeConfig } from "./router-config";
 const HomeStack = createStackNavigator(
-    HomeConfig, {
-        initialRouteName:'Home',
+    HomeConfig,
+    {
+        initialRouteName: 'Home',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: 'black',
-                height: 40,
+                backgroundColor: '#C20C0C',
+                height: 50,
             },
             headerTintColor: '#fff',
-            headerTitleStyle: { flex: 1, textAlign: 'center' },
+            headerTitleStyle: { flex: 1, textAlign: 'center'},
+            
         }
     }
 
 )
+
+HomeStack.navigationOptions = ({ navigation }) => {
+    console.warn(navigation)
+    return {
+        tabBarLabel: '我的',
+
+    }
+}
 
 export default HomeStack

@@ -5,23 +5,25 @@ import {
     Button,
 } from 'react-native';
 import { connect } from "react-redux";
-
+import Profile from "../../components/Home/Profile";
+import Calender from "../../components/Home/Calender";
+import PlanCard from "../../components/Home/PlanCard";
+import MenuIcon from "../../components/Menu";
 @connect(({ app }) => ({
     app
 }))
 export default class Home extends Component {
-    static navigationOptions = {
-        title: 'Home',
+    static navigationOptions =({navigation})=> { 
+        return{
+            title: '我的',
+            // headerLeft: <MenuIcon/>
+            headerLeft:(<MenuIcon/>),
+            headerRight:(<View></View>)
+        }
     }
     
     componentDidMount(){
-        // fetch('login/').then((res)=>{
-        //    return res.json()
-        // }).then(data=>{
-        //     console.warn(data)
-        // }).catch(e=>{
-        //     console.warn(e)
-        // })
+
     }
 
     componentWillUnmount(){
@@ -36,8 +38,9 @@ export default class Home extends Component {
     render() {
         return (
             <View>
-                <Text>{this.props.app.home}</Text>
-                {/* <Button onPress={()=>{this.jump()}} title='go to plan'></Button> */}
+                <Profile/>
+                <Calender/>
+                <PlanCard/>
             </View>
         )
     }

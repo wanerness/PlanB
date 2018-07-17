@@ -6,7 +6,7 @@ const PlanStack = createStackNavigator(
         initialRouteName: 'Plan',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: 'black',
+                backgroundColor: '#C20C0C',
                 height: 40,
             },
             headerTintColor: '#fff',
@@ -15,4 +15,9 @@ const PlanStack = createStackNavigator(
     }
 )
 
+PlanStack.navigationOptions = ({ navigation }) => {
+    return {
+        tabBarLabel: '计划',
+    }
+}
 export default PlanStack
