@@ -27,7 +27,7 @@ export default class Home extends Component {
     }
 
     componentWillUnmount(){
-        console.warn('home unmount')
+        // console.warn('home unmount')
     }
     
     // jump=()=>{  

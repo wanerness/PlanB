@@ -15,16 +15,16 @@ const MyApp = createDrawerNavigator({
         // drawerWidth:200
         contentOptions: {
             activeTintColor: '#fff',
-            activeBackgroundColor: '#C20C0C'
+            activeBackgroundColor: '#C20C0C'    
         },
         contentComponent: props => {
-            console.log('contentComponent');
-            console.log(props);
+            // console.log('contentComponent');
+            // console.log(props); 
             return (
                 <ScrollView>
                     <SafeAreaView>
                         <View style={styles.wrap}>
-                            <TouchableHighlight onPress={() => { props.navigation.navigate('Folk') }}>
+                            <TouchableHighlight onPress={() => { props.navigation.navigate('Setting') }}>
                                 <Image
                                     source={require('../assets/images/test.jpg')}
                                     style={styles.container} />

@@ -19,7 +19,7 @@ const HomeStack = createStackNavigator(
 )
 
 HomeStack.navigationOptions = ({ navigation }) => {
-    console.warn(navigation)
+    // console.warn(navigation)
     return {
         tabBarLabel: '我的',
 
