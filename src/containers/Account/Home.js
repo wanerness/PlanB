@@ -9,6 +9,8 @@ import Profile from "../../components/Home/Profile";
 import Calender from "../../components/Home/Calender";
 import PlanCard from "../../components/Home/PlanCard";
 import MenuIcon from "../../components/Menu";
+
+import { Device } from "../../components/common";
 @connect(({ app }) => ({
     app
 }))
@@ -23,7 +25,6 @@ export default class Home extends Component {
     }
     
     componentDidMount(){
-
     }
 
     componentWillUnmount(){

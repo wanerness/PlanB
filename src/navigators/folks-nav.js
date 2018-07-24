@@ -15,4 +15,17 @@ const FolksStack = createStackNavigator(
     }
 )
 
+FolksStack.navigationOptions = ({ navigation }) => {
+
+    // console.warn(navigation)
+    let tabBarVisible = true
+    if (navigation.state.index > 0) {
+        tabBarVisible = false
+    }
+    return {
+        tabBarLabel: '我的',
+        tabBarVisible
+    }
+}
+
 export default FolksStack

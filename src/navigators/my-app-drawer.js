@@ -1,21 +1,35 @@
 import React from "react";
 import { createDrawerNavigator, DrawerItems } from "react-navigation";
-import AppTab from "./app-tab";
 import { Image, ScrollView, View, StyleSheet, TouchableHighlight, SafeAreaView, Button } from "react-native";
 import CustomButton from "../components/CustomButton";
+import List from "../components/List";
+import AppTab from "./app-tab";
+import Mine from "../containers/Mine";
+import Question from "../containers/Question";
+import Message from "../containers/Message";
+import AboutUs from "../containers/AboutUs";
 
 const MyApp = createDrawerNavigator({
     Home: {
         screen: AppTab,
     },
-    Test: {
-        screen: AppTab
-    }
+    Mine: {
+        screen: Mine
+    },
+    Question: {
+        screen: Question
+    },
+    Message: {
+        screen: Message
+    },
+    AboutUs: {
+        screen: AboutUs
+    },
 }, {
         // drawerWidth:200
         contentOptions: {
-            activeTintColor: '#fff',
-            activeBackgroundColor: '#C20C0C'    
+            // activeTintColor: '#fff',
+            // activeBackgroundColor: '#C20C0C'    
         },
         contentComponent: props => {
             // console.log('contentComponent');

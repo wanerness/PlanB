@@ -21,7 +21,9 @@ const SwitchNav = createSwitchNavigator(
 
 export default class Router extends Component {
     render() {
-        return (<SwitchNav />)
+        return (<SwitchNav screenProps={
+            (props)=>{console.warn(props)}
+        }/>)
     }
 }
 

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
-// @withNavigation()
 class List extends Component {
 
     render() {
@@ -35,8 +34,9 @@ List.Item = (props) => {
             style={styles.item}
             onPress={props.onPress}
         >
+            {props.icon ? <Ionicons name={props.icon} size={20} color='#C20C0C'></Ionicons>:null}
             <View>
-                <Text>{props.title}</Text>
+                <Text style={{fontSize:14}}>{props.title}</Text>
             </View>
 
 
@@ -45,7 +45,8 @@ List.Item = (props) => {
                     {renderRight()}
                 </View>
                 <View>
-                    <Text style={styles.des}>> </Text>
+                    {/* <Text style={styles.des}> </Text> */}
+                    <Ionicons name="ios-arrow-forward" size={20} color='#999'></Ionicons>
                 </View>
             </View>
 
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
+        marginBottom:16
     },
     item: {
         flexDirection: 'row',
@@ -67,10 +69,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         borderBottomWidth: 0.5,
-        borderBottomColor: '#666',
+        borderBottomColor: '#999',
     },
     des: {
-        color: '#666',
+        fontSize:13,
+        color: '#999',
     },
     img:{
         width:40,
@@ -80,9 +83,10 @@ const styles = StyleSheet.create({
 })
 
 List.Item.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string, 
+    icon: PropTypes.string, 
     description: PropTypes.string,
-    img: PropTypes.string,
+    img: PropTypes.string, 
     onPress: PropTypes.func
 }
 

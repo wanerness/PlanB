@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { createSwitchNavigator, createBottomTabNavigator, createStackNavigator, createDrawerNavigator, DrawerItems } from "react-navigation";
 
-
 import HomeStack from "./home-nav";
 import PlanStack from "./plan-nav";
 import FolksStack from "./folks-nav";
 import { Ionicons } from '@expo/vector-icons';
+
+import { View } from "react-native";
+
+import DrawerCell from "../components/DrawerCell";
 
 const AppTab = createBottomTabNavigator({
     Home: HomeStack,
@@ -33,6 +36,7 @@ const AppTab = createBottomTabNavigator({
 
         },
         navigationOptions: ({ navigation }) => ({
+    
             tabBarIcon: ({ focused, tintColor }) => {//图标配置
                 const { routeName } = navigation.state;
                 let iconName
@@ -49,4 +53,8 @@ const AppTab = createBottomTabNavigator({
         })
     })
 
+    AppTab.navigationOptions={
+        // drawerLockMode:'locked-closed'
+        drawerLabel: <DrawerCell title='主页' icon='ios-arrow-forward' />,
+    }
     export default AppTab

@@ -27,9 +27,10 @@ import React from "react";
 import dva from "./utils/dva";
 import Router from "./Router";
 import appMod from "./models/app";
+import ModelList from "./common/model-list";
 
 const app=dva({
-    models:[appMod],
+    models: ModelList,
     onError(e){
         console.log(e)
     }
